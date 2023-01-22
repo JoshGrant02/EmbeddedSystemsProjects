@@ -1,2 +1,10 @@
-!**/Inc/*
-!**/Src/*
+.metadata
+**/Debug
+**/.settings
+**/Startup
+**/*.ld
+**/*.launch
+**/*.cproject
+**/*.project
+**/*.ioc
+**/*.bak
