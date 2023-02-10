@@ -19,3 +19,6 @@ In Embedded Systems 2, we ported over our knowledge of microcontroller component
 3. LCD Api
 4. Console Application
 5. Play Songs
+6. Play Background Songs
+7. Frequency Reader
+8. Analog Signal Capture
