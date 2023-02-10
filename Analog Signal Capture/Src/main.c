@@ -1,3 +1,14 @@
+//I though this lab was actually a lot of fun to write and to complete. I had
+//a couple issues along the way where once my TIM_ARR was overflowing so I had
+//to compute what my reasonable max/min sampleRates could be with my desired
+//PSC value. I also had another time where my AD2 pin somehow accidentally got
+//unplugged from my board. That took a good 20 minutes for be to "debug" why I
+//was just getting random noise to end up glancing over at my board and seeing
+//that it wasn't hooked up lol... Anyways. It was cool to use malloc, and to
+//try to catch all the edge conditions to make sure my code doesn't break. I
+//also utilized error codes to accurately tell the user what is going on, which
+//I thought was really cool.
+
 /**
   ******************************************************************************
   * @file    main.c
