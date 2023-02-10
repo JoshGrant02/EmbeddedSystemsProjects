@@ -18,7 +18,12 @@
  */
 
 #define GPIOBEN (1<<1)
+#define TIM2EN (1<<0)
 #define TIM3EN (1<<1)
+#define TIM4EN (1<<2)
+#define ADCEN (1<<8)
+
+#define ADC1IE (1<<18)
 
 #define NVIC_ISER (uint32_t*)0xE000E100
 #define RCC_BASE (volatile RCC*) 0x40023800
@@ -99,9 +104,14 @@ typedef struct {
  */
 
 #define TIM_EN 0b1
+#define CC1S_PINS 0
 #define OC1M_PINS 4
+#define OC4M_PINS 12
 #define TIM_CC1E (1<<0)
+#define TIM_CC4E (1<<12)
 #define OC_TOGGLE 0b011
+#define IC_CH1 0b01
+#define CC1IE (1<<1)
 
 #define TIM2_BASE (volatile TIMx*) 0x40000000
 #define TIM3_BASE (volatile TIMx*) 0x40000400
@@ -132,5 +142,47 @@ typedef struct {
 	uint32_t DCR;
 	uint32_t DMAR;
 } TIMx;
+
+
+/*
+ * ADC Base Locations & Struct
+ */
+
+#define ADC_EN 0b1
+#define TRIGGER_SRC_PINS 24
+#define TRIGGER_EDG_PINS 28
+#define TIM4_TRIGGER 0b1001
+#define ANY_EDGE 0b11
+#define EOCIE (1<<5)
+
+#define ADC1_BASE (volatile ADCx*) 0x40012000
+#define ADC2_BASE (volatile ADCx*) 0x40012100
+#define ADC3_BASE (volatile ADCx*) 0x40012200
+
+typedef struct {
+	uint32_t SR;
+	uint32_t CR1;
+	uint32_t CR2;
+	uint32_t SMPR1;
+	uint32_t SMPR2;
+	uint32_t JOFR1;
+	uint32_t JOFR2;
+	uint32_t JOFR3;
+	uint32_t JOFR4;
+	uint32_t HTR;
+	uint32_t LTR;
+	uint32_t SQR1;
+	uint32_t SQR2;
+	uint32_t SQR3;
+	uint32_t JSQR;
+	uint32_t JDR1;
+	uint32_t JDR2;
+	uint32_t JDR3;
+	uint32_t JDR4;
+	uint32_t DR;
+	uint32_t CSR;
+	uint32_t CCR;
+	uint32_t CDR;
+} ADCx;
 
 #endif

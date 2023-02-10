@@ -107,6 +107,9 @@ void printHelp() {
 			"- Plays the requested song on the speaker\n\n"
 			"pbs songName\n\t"
 			"- Plays the requested song on the speaker in the background\n\n"
+			"rf\n\t"
+			"- Reads the frequency of a square wave driven into pin PA15,\n\t  and prints the "
+			"frequency to the console\n\n"
 			"help\n\t"
 			"- Prints this prompt\n");
 }

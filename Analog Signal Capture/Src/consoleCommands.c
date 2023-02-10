@@ -107,6 +107,14 @@ void printHelp() {
 			"- Plays the requested song on the speaker\n\n"
 			"pbs songName\n\t"
 			"- Plays the requested song on the speaker in the background\n\n"
+			"rf\n\t"
+			"- Reads the frequency of a square wave driven into pin PA15,\n\t  and prints the "
+			"frequency to the console\n\n"
+			"dw sampleRate numSamples\n\t"
+			"- Begins digitizing the input waveform for a specified amount\n\t  of samples at "
+			"a rate of sampleRate samples per second\n\n"
+			"dwcs\n\t"
+			"- Collects the samples for the most recent digitized waveform\n\n"
 			"help\n\t"
 			"- Prints this prompt\n");
 }

@@ -18,6 +18,7 @@
  */
 
 #define GPIOBEN (1<<1)
+#define TIM2EN (1<<0)
 #define TIM3EN (1<<1)
 
 #define NVIC_ISER (uint32_t*)0xE000E100
@@ -99,9 +100,12 @@ typedef struct {
  */
 
 #define TIM_EN 0b1
+#define CC1S_PINS 0
 #define OC1M_PINS 4
 #define TIM_CC1E (1<<0)
 #define OC_TOGGLE 0b011
+#define IC_CH1 0b01
+#define CC1IE (1<<1)
 
 #define TIM2_BASE (volatile TIMx*) 0x40000000
 #define TIM3_BASE (volatile TIMx*) 0x40000400

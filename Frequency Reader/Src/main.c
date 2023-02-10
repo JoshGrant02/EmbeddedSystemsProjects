@@ -1,8 +1,10 @@
-//This lab was a relatively easy one. A good amount of my code was able to be copied/reused for the new method.
-//It was a little weird to think about how to organize my static variables, and I don't think I did it necessarily
-//the best way, but it looks good enough to me, and I didn't have a lot of time to work on this lab. I cleaned
-//up a couple other things from my previous lab as well regarding code organization, so I think it looks even more
-//professional from that standpoint.
+//This lab was not too bad. I figured out that it is important to read the manual
+//very closely sometimes. I initially had an issue where I was changing the CCMR
+//after I enabled the timer, so it wasn't actually updating the mode register.
+//Other than that, I had some small logic issues, but this lab went pretty
+//smoothly. It's cool to see the amount of precision that this can have when
+//measuring high frequencies. It was also  pretty fun to hook up the waveform
+//generator and drive the singal into the pin.
 
 /**
   ******************************************************************************
@@ -21,12 +23,14 @@
 #include "consoleCommands.h"
 #include "uart_driver.h"
 #include "buzzer.h"
+#include "frequencyReader.h"
 
 #define RMW_CMD "rmw"
 #define WMW_CMD "wmw"
 #define DMP_CMD "dm"
 #define PS_CMD "ps"
 #define PBS_CMD "pbs"
+#define RF_CMD "rf"
 #define HELP_CMD "help"
 #define HOTCROSSBUNS "HotCrossBuns"
 #define HAPPYBIRTHDAY "HappyBirthday"
@@ -80,6 +84,9 @@ int main(void){
 		}
 		else if (strcmp(instruction, PBS_CMD) == 0) {
 			handleSongInstruction(paramOne, 1);
+		}
+		else if (strcmp(instruction, RF_CMD) == 0) {
+			readFrequency();
 		}
 		else if (strcmp(instruction, HELP_CMD) == 0) {
 			printHelp();
